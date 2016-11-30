@@ -3,7 +3,12 @@
 . ${BUILDPACK_TEST_RUNNER_HOME}/lib/test_utils.sh
 
 testCompile() {
+  cat > ${BUILD_DIR}/Aptsources <<EOF
+ppa:mc3man/trusty-media
+EOF
+
   cat > ${BUILD_DIR}/Aptfile <<EOF
+ffmpeg
 s3cmd
 wget
 EOF
