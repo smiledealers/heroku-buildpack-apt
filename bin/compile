@@ -36,7 +36,7 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 for SOURCE in $(cat $BUILD_DIR/Aptsources); do
-  add-apt-repository $SOURCE
+  echo $SOURCE > /etc/apt/sources.list
 done
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"

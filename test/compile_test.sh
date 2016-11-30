@@ -4,7 +4,7 @@
 
 testCompile() {
   cat > ${BUILD_DIR}/Aptsources <<EOF
-ppa:mc3man/trusty-media
+deb http://ppa.launchpad.net/mc3man/trusty-media/ubuntu trusty main
 EOF
 
   cat > ${BUILD_DIR}/Aptfile <<EOF
